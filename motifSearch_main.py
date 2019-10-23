@@ -1,8 +1,8 @@
 # Developed by J. Keller & C. Libourel
 
 
-import getMotifs as gm
-import general_functions as gf
+from scripts import getMotifs as gm
+from scripts import general_functions as gf
 import os, sys, subprocess
 import configparser
 
@@ -14,7 +14,8 @@ if __name__ == '__main__':
     seq = config["directories"]["path_to_sequences"]
     mod = config["run"]["mode"]
     lmot = config["Motifs sequences"]["sequences"].split(";")
-    path2rscript = os.path.abspath(os.path.dirname(sys.argv[0])) + os.path.sep + "motifSearch2_plot.R"
+    path2rscript = os.path.abspath(os.path.dirname(sys.argv[0])) + os.path.sep + "scripts" + os.path.sep + "motifSearch2_plot.R"
+    print(path2rscript)
 
     path_out = gf.create_gen_out(gen_out)
     os.chdir(path_out)

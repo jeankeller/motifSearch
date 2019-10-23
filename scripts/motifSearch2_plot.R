@@ -3,8 +3,8 @@
 # R
 
 
-PATH = "C:/Users/jean.keller/Documents/phylo_ondemand/myb_dugald/phyloe1e-45/putclade/prom_results_20190619-105928/motifSearch_results_20190927-150049/res/"
-OUTPATH = "C:/Users/jean.keller/Documents/phylo_ondemand/myb_dugald/phyloe1e-45/putclade/prom_results_20190619-105928/motifSearch_results_20190927-150049/stats/"
+PATH = "/home/jkeller/work/test_motifSearch/motifSearch_results_20191023-124124/res/"
+OUTPATH = "/home/jkeller/work/test_motifSearch/motifSearch_results_20191023-124124/stats/"
 
 
 
