@@ -5,17 +5,23 @@ from scripts import getMotifs as gm
 from scripts import general_functions as gf
 import os, sys, subprocess
 import configparser
+import argparse
 
 if __name__ == '__main__':
-    config = configparser.ConfigParser()
-    config.read(sys.argv[1])
+    #config = configparser.ConfigParser()
+    #config.read(sys.argv[1])
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--file", help= "path to sequence file")
+    parser.add_argument("-o", "--output", help= "path to output directory")
+    parser.add_argument("-m", "--motif", nargs = "+", help = "motifs to search (semi-colon separated)")
+    parser.add_argument("--mod", help = "nucleotide (nucl) or protein (prot) mode")
+    args = parser.parse_args()
 
-    gen_out = config["directories"]["path_to_output"]
-    seq = config["directories"]["path_to_sequences"]
-    mod = config["run"]["mode"]
-    lmot = config["Motifs sequences"]["sequences"].split(";")
+    gen_out = args.output
+    seq = args.file
+    mod = args.mod
+    lmot = args.motif
     path2rscript = os.path.abspath(os.path.dirname(sys.argv[0])) + os.path.sep + "scripts" + os.path.sep + "motifSearch2_plot.R"
-    print(path2rscript)
 
     path_out = gf.create_gen_out(gen_out)
     os.chdir(path_out)
