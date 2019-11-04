@@ -2,7 +2,7 @@ This is the README file of motifSearch
 
 This script aims to retrieve motifs in nucleotide or protein sequences.
 motifSearch is written in Python3.6.8 and should work with all Python3.x distributions. A R script is called for the graph draw.
-Requirements:
+Requirements:  
     - Python3.x  
     - R v3.6.0  
     - Basic Python packages (included in basic Python installation): sys, os, re  
