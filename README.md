@@ -22,5 +22,6 @@ Input motif format:
 - "[]": one of the character contains between brackets (e.g T[AG]C means search for T + A or G + C); [^A] means any character except A  
 - "*": any or many occurences of the previous character (e.g AT* means search for A + 0 or many T)  
 - "{}": precise number of occurences for the previous character (e.g AT{2,5}C means search for A + 2 to 5 T + C; whereas AT{2,}C means search for A + at least 2 T + C)  
+
 Useful link to use regular expression: LINK2ADD
 
