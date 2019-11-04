@@ -12,9 +12,11 @@ Requirements:
 - R packages: data.table, ggplot2, tidyr, dplyr, gridExtra  
 
 To install any package additional Python packages, the easiest way is to use the pip command: `pip install package_name`  
-To install R packages, use the followaing command in R: `install.packages("package_name", dependencies=TRUE, INSTALL_opts = c('--no-lock'))`
+To install R packages, use the followaing command in R:  
+`install.packages("package_name", dependencies=TRUE, INSTALL_opts = c('--no-lock'))`
 
-motifSearch usage: `python path/to/motifSearch_main.py -f path/to/sequence_file -o path/to/output_directory --mod -m motifs_to_search` (space separated)
+motifSearch usage:  
+`python path/to/motifSearch_main.py -f path/to/sequence_file -o path/to/output_directory --mod -m motifs_to_search` (space separated)
 
 Motif to be searched have to be provided using the syntax of regular expression (see details below).
 Input motif format:
