@@ -16,7 +16,7 @@ To install R packages, use the followaing command in R:
 `install.packages("package_name", dependencies=TRUE, INSTALL_opts = c('--no-lock'))`
 
 motifSearch usage:  
-`python path/to/motifSearch_main.py -f path/to/sequence_file -o path/to/output_directory --mod -m motifs_to_search` (space separated)
+`python path/to/motifSearch_main.py -f path/to/sequence_file -o path/to/output_directory --mod {nucl or prot} -m motifs_to_search` (space separated)
 
 Motif to be searched have to be provided using the syntax of regular expression (see details below).
 Input motif format:
