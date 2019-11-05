@@ -3,8 +3,8 @@
 # R
 
 
-PATH = "/d/motif_search/TEST/motifSearch_results_20191105-161643/res/"
-OUTPATH = "/d/motif_search/TEST/motifSearch_results_20191105-161643/stats/"
+PATH = "/res/"
+OUTPATH = "/stats/"
 
 
 
