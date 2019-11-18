@@ -1,0 +1,3 @@
+include README.md
+include motifSearch/motifSearch2_plot.R
+

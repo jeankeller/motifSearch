@@ -1,15 +1,12 @@
 # Developed by J. Keller & C. Libourel
 
 
-from scripts import getMotifs as gm
-from scripts import general_functions as gf
+from motifSearch import getMotifs as gm
+from motifSearch import general_functions as gf
 import os, sys, subprocess
-import configparser
 import argparse
 
 if __name__ == '__main__':
-    #config = configparser.ConfigParser()
-    #config.read(sys.argv[1])
     parser = argparse.ArgumentParser()
     parser.add_argument("-f", "--file", help= "path to sequence file")
     parser.add_argument("-o", "--output", help= "path to output directory")
@@ -21,7 +18,7 @@ if __name__ == '__main__':
     seq = args.file
     mod = args.mod
     lmot = args.motif
-    path2rscript = os.path.abspath(os.path.dirname(sys.argv[0])) + os.path.sep + "scripts" + os.path.sep + "motifSearch2_plot.R"
+    path2rscript = os.path.abspath(os.path.dirname(sys.argv[0])) + os.path.sep + "motifSearch2_plot.R"
 
     path_out = gf.create_gen_out(gen_out)
     os.chdir(path_out)
