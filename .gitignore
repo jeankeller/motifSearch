@@ -1,0 +1,5 @@
+build/
+dist/
+motifSearch.egg-info/
+motifSearch/__pycache__
+
