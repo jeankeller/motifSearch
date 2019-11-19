@@ -3,17 +3,17 @@
 # R
 
 
-PATH = "/res/"
-OUTPATH = "/stats/"
+#PATH = "/res/"
+#OUTPATH = "/stats/"
 
 
 
 
-#slashtype = substr(unique(gsub("[^\\/]", "", getwd())),1,1)
+slashtype = substr(unique(gsub("[^\\/]", "", getwd())),1,1)
 
-#PATH = paste0(getwd(),slashtype,"res",slashtype)
+PATH = paste0(getwd(),slashtype,"res",slashtype)
 #PROM = paste0(getwd(),slashtype,"data",slashtype)
-#OUTPATH = paste0(getwd(),slashtype,"stats",slashtype)
+OUTPATH = paste0(getwd(),slashtype,"stats",slashtype)
 
 #system(paste0("mkdir ",OUTPATH))
 

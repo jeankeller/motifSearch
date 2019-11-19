@@ -1,25 +1,40 @@
-# Developed by J. Keller & C. Libourel
-
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+#
+#Copyright 2019 Jean Keller & Cyril Libourel
+#This program (motifSearch) is distributed under the terms of the GNU General Public License v3+
 
 from motifSearch import getMotifs as gm
 from motifSearch import general_functions as gf
 import os, sys, subprocess
 import argparse
+import pkg_resources
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-f", "--file", help= "path to sequence file")
-    parser.add_argument("-o", "--output", help= "path to output directory")
-    parser.add_argument("-m", "--motif", nargs = "+", help = "motifs to search (semi-colon separated)")
-    parser.add_argument("--mod", help = "nucleotide (nucl) or protein (prot) mode")
+def main():
+    parser = argparse.ArgumentParser(usage="motifsearch [options] ....",
+                                     description="""A Python package to search motifs in nucleotide/
+                                     protein sequences""",
+                                     epilog="""Written by Jean Keller (kellerjeanphd@gmail.com) and
+                                     Cyril Libourel (cyril.libourel@gmail.com), LRSV University of
+                                     Toulouse III/CNRS. (c) 2019- Released under the terms of the
+                                     GNU General Public License v3 or later (LGPLv3+)""")
+    #Mandatory arguments
+    parser.add_argument("-f", "--file", required = True, type=str, help= "path to sequence file [mandatory]")
+    parser.add_argument("-m", "--motif", required = True, type=str, nargs = "+", help = "motifs to search, space separated [mandatory]")
+    parser.add_argument("--mod", type=str, required = True, help = "nucleotide (nucl) or protein (prot) mode [mandatory]")
+
+    #Optional arguments
+    parser.add_argument("-o", "--output", default="./", type=str, help= """path to output directory,
+                        by default, use the current directory [optional]""")
+    
     args = parser.parse_args()
 
     gen_out = args.output
     seq = args.file
     mod = args.mod
     lmot = args.motif
-    path2rscript = os.path.abspath(os.path.dirname(sys.argv[0])) + os.path.sep + "motifSearch2_plot.R"
-
+    path2rscript = pkg_resources.resource_filename("motifSearch", "motifSearch2_plot.R")
+    
     path_out = gf.create_gen_out(gen_out)
     os.chdir(path_out)
     os.makedirs("res")
@@ -37,6 +52,7 @@ if __name__ == '__main__':
     fpos_fw.write("sequence_id\tmotif\tsequence\tstart\tstop\n")
     fpos_rv.write("sequence_id\tmotif\tsequence\tstart\tstop\n")
 
+    sys.stdout.write("\n\n################################\n\n")
     for mot in lmot:
         sys.stdout.write("Starting search for {}\n".format(mot))
         c_mot = gm.GetMotifs(mot, seq, fcount, fseq_fw, fseq_rv, fpos_fw, fpos_rv, flenseq)
@@ -52,8 +68,11 @@ if __name__ == '__main__':
     fseq_fw.close()
     fpos_rv.close()
     flenseq.close()
+    gf.getstats(fcount, path_out, lmot)
 
-    gf.setrpath(path2rscript, os.path.abspath("res"), os.path.abspath("stats"))
+    sys.stdout.write("Generating the graphs, this may take a while!\n")
+
     r_cmd = ["Rscript", path2rscript]
     subprocess.run(r_cmd)
-    sys.stdout.write("Job done!\nResults are located at: {}\n".format(path_out))
+    sys.stdout.write("\n\n################################\n\nJob done!\nResults are located at: {}\n".format(path_out))
+    
