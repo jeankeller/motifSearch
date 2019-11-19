@@ -12,7 +12,7 @@ REQUIRES_PYTHON = ">=3.6.0"
 VERSION = "1.0"
 
 #Required packages
-REQUIRED = ["biopython"]
+REQUIRED = ["biopython", "pandas"]
 
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -35,18 +35,15 @@ setup(
     url=URL,
     packages=["motifSearch"],
     install_requires=REQUIRED,
-    #package_dir = {"": "motifSearch"},
-    #packages = find_packages(),
-    package_data={"": ["*.R"]},
+    package_data={"motifSearch": ["motifSearch/motifSearch2_plot.R"]},
     include_package_data=True,
-    #scripts=["motifSearch/motifSearch_main.py"],
 
     entry_points={
         "console_scripts": [
-            "motifsearch=motifSearch:main",
+            "motifsearch=motifSearch.motifSearch_main:main",
             ],
         },
-    #include_package_data=True,
+    license="LGPLv3+",
     classifiers=[
         "License :: OSI Approved :: GNU Lesser Public License v3 or Later",
         "Programming Language :: Python",
