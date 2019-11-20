@@ -16,7 +16,7 @@ To install R packages, use the following command in R:
 `install.packages("package_name", dependencies=TRUE, INSTALL_opts = c('--no-lock'))`  
 
 motifSearch compatibility:  
-- Linux (developped and tested in Ubuntu 18.04LTS)  
+- Linux (developped and tested in Ubuntu 18.04 LTS)  
 - Windows (tested using the PowerShell 6: https://github.com/PowerShell/PowerShell)  
 
 ## Install ##  
