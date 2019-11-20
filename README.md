@@ -15,7 +15,7 @@ To install any package additional Python packages, the easiest way is to use the
 To install R packages, use the followaing command in R:  
 `install.packages("package_name", dependencies=TRUE, INSTALL_opts = c('--no-lock'))`
 
-Install motifSearch: 
+Install motifSearch:  
 `git clone https://github.com/jeankeller/motifSearch.git`  
 `cd motifSearch/`  
 `python setup.py install`
