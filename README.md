@@ -16,9 +16,11 @@ To install R packages, use the followaing command in R:
 `install.packages("package_name", dependencies=TRUE, INSTALL_opts = c('--no-lock'))`
 
 Install motifSearch:  
-`git clone https://github.com/jeankeller/motifSearch.git`  
-`cd motifSearch/`  
-`python setup.py install`
+```
+git clone https://github.com/jeankeller/motifSearch.git  
+cd motifSearch/  
+python setup.py install
+```
 
 motifSearch usage:  
 `python3 path/to/motifSearch_main.py -f path/to/sequence_file -o path/to/output_directory --mod {nucl or prot} -m motifs_to_search` (space separated)  
