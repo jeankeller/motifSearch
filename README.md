@@ -7,10 +7,11 @@ motifSearch is written in Python3.6.8 and should work with all Python3.6 distrib
 Requirements:  
 - Python3.6  
 - R v3.6.0  
-- Basic Python packages (included in basic Python installation): sys, os, re  
-- Additional packages that are not included in Python basic installation: subprocess, pandas, biopython  
-To install any additional Python packages, the easiest way is to use the pip command: `pip install package_name`  
-- R packages: data.table, ggplot2, tidyr, dplyr, gridExtra  
+- Basic Python packages (included in basic Python installation): *sys, os, re, subprocess*  
+- Additional packages that are not included in Python basic installation: *pandas, biopython*  
+To install any additional Python packages, the easiest way is to use the pip command:  
+`pip install package_name`  
+- R packages: *data.table, ggplot2, tidyr, dplyr, gridExtra*  
 To install R packages, use the following command in R:  
 `install.packages("package_name", dependencies=TRUE, INSTALL_opts = c('--no-lock'))`
 
