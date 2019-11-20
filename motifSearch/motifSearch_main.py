@@ -29,8 +29,8 @@ def main():
     
     args = parser.parse_args()
 
-    gen_out = args.output
-    seq = args.file
+    gen_out = os.path.abspath(args.output)
+    seq = os.path.abspath(args.file)
     mod = args.mod
     lmot = args.motif
     path2rscript = pkg_resources.resource_filename("motifSearch", "motifSearch2_plot.R")
