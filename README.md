@@ -27,7 +27,7 @@ python setup.py install
 ```
 
 ## Usage ##  
-`python3 path/to/motifSearch_main.py -f path/to/sequence_file -o path/to/output_directory --mod {nucl or prot} -m motifs_to_search` (space separated)  
+`python3 path/to/motifSearch_main.py -f path/to/sequence_file -o path/to/output_directory --mod {nucl or prot} -m motifs_to_search` (space separated, between quotes)  
 Typing `python3 motifSearch_main.py -h` will bring up help and usage information.
 
 Motif to be searched have to be provided using the syntax of regular expression (see details below).
